@@ -1,14 +1,25 @@
 
 
 
+
+import { Container } from 'react-bootstrap';
+
+import Header from './components/Header';
+
+
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <i class="fas fa-h1    ">Hallo</i>
-      </header>
-    </div>
+    <>
+    
+      <Header />
+     
+        <Container>
+        
+        </Container>
+    
+     
+    </>
   );
-}
+};
 
 export default App;
