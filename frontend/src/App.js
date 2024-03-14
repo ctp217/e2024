@@ -1,26 +1,22 @@
+import { Container } from "react-bootstrap";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import logo from "../src/assets/logo.png";
+import HomeScreen from "./screens/HomeScreen";
 
-
-
-
-import { Container } from 'react-bootstrap';
-
-import Header from './components/Header';
-import Footer from './components/Footer';
-import logo from '../src/assets/logo.png';
 
 function App() {
   return (
     <>
-    
       <Header />
-     <main className='py-3'>
+      <main className="py-3">
         <Container>
-        <p>main page</p>
+        <HomeScreen/>
         </Container>
-        </main>
-   <Footer/>
+      </main>
+      <Footer />
     </>
   );
-};
+}
 
 export default App;
