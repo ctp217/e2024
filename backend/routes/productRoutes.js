@@ -13,9 +13,14 @@ const products =await Products.find({});
   res.json(products)
 }));
 //get single product
-router.get('/:id',(req,res)=>{
-const product=products.find((p)=>p._id === req.params.id);
+router.get('/:id',asyncHandler(async(req,res)=>{
+const product=await Products.findById(req.params.id);
+if(product){
   res.json(product)
-});
+}
+  else{
+    res.status(400).json({message:'product not found'});
+  }
+}));
 
 export default router;
