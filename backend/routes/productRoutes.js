@@ -10,6 +10,7 @@ import Products from '../models/productModel.js'
 router.get('/',asyncHandler(async (req,res)=>{
 //to fetch data from data base 
 const products =await Products.find({});
+throw new Error('some Erorr');
   res.json(products)
 }));
 //get single product
@@ -19,7 +20,8 @@ if(product){
   res.json(product)
 }
   else{
-    res.status(400).json({message:'product not found'});
+    res.status(400);
+    throw new Error('product not found');
   }
 }));
 
