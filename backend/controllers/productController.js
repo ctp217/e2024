@@ -10,6 +10,7 @@ const getProducts = asyncHandler(async (req, res) => {
   const products = await Products.find({});
 
   res.json(products);
+  
 });
 // @desc    Fetch single product
 // @route   GET /api/products/:id
