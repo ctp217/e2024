@@ -13,6 +13,8 @@ import {
   Button,
 } from "react-bootstrap";
 import Rating from "../components/Rating";
+import Loader from "../components/Loader";
+import Message from "../components/Message";
 
 export const ProductScreen = () => {
   const { id: productId } = useParams();
@@ -31,11 +33,11 @@ export const ProductScreen = () => {
       <Link className="btn btn-primary my-3" to="/">
         Back
       </Link>
-
+    //  <Message variant='danger'>Test message </Message>
       {isLoading ? (
-        <h2>..is Loading</h2>
+        <Loader/>
       ) : error ? (
-        <div>{error.error} </div>
+        <Message variant='danger'>{error.error} </Message>
       ) : (
         <>
           <h1>Latest Products</h1>
