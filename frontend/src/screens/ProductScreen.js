@@ -33,7 +33,7 @@ export const ProductScreen = () => {
       <Link className="btn btn-primary my-3" to="/">
         Back
       </Link>
-    //  <Message variant='danger'>Test message </Message>
+    
       {isLoading ? (
         <Loader/>
       ) : error ? (
