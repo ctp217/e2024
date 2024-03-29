@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { updateCart } from "../utils/cartUtils";
 
 const initialState = localStorage.getItem("cart")
   ? JSON.parse(localStorage.getItem("cart"))
@@ -35,17 +36,7 @@ const cartSlice = createSlice({
         )
       ));
 
-      // Calculate the shipping price
-      //if itemprice>100 then shippingprice ==0 else 10
-      const shippingPrice = addDecimals(state.itemsPrice > 100 ? 0 : 10);
-
-      // Calculate the tax price
-      const taxPrice = addDecimals(0.15 * state.itemsPrice);
-
-      const totalPrice = addDecimals(itemsPrice + shippingPrice + taxPrice);
-
-      // Save the cart to localStorage
-      localStorage.setItem("cart", JSON.stringify(state));
+     return updateCart(state);
     },
   },
 });
